@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="230px"
+            android:layout_height="230px"
+            android:layout_marginBottom="156px"
+            android:visibility="visible"
+            android:src="@mipmap/ic_launcher" />
+
+
+
+        <EditText
+            android:id="@+id/et_mail"
+            android:layout_width="975px"
+            android:layout_height="105px"
+            android:alpha="0.8"
+            android:background="@drawable/white_rounded_corner"
+            android:fontFamily="@font/roboto"
+            android:hint="Email"
+            android:paddingStart="30px"
+            android:paddingEnd="30px"
+            android:tag="45"
+            android:gravity="center|start"
+            android:textColor="@color/white"
+            android:textColorHint="@color/yellow_main"
+            android:textSize="45px"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="975px"
+            android:layout_height="105px"
+            android:layout_marginTop="30px"
+            android:alpha="0.8"
+            android:background="@drawable/white_rounded_corner"
+            android:fontFamily="@font/roboto"
+            android:hint="Password"
+            android:paddingStart="30px"
+            android:paddingEnd="30px"
+            android:gravity="center|start"
+            android:tag="45"
+            android:textAlignment="viewStart"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/yellow_main"
+            android:textSize="45px"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="654px"
+            android:layout_height="105px"
+            android:layout_marginTop="80px"
+            android:alpha="0.8"
+            android:background="@drawable/white_rounded_corner"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:tag="45"
+            android:text="LOGIN"
+            android:textAllCaps="false"
+            android:textColor="@color/yellow_main"
+            android:textSize="45px"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="654px"
+            android:layout_height="50px"
+            android:layout_marginTop="20px"
+            android:alpha="0.6"
+            android:visibility="invisible"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/btn_forget_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:tag="33"
+                android:gravity="start"
+                android:text="Forgotten password?"
+                android:textColor="@color/white"
+                android:textSize="33px" />
+
+            <TextView
+                android:id="@+id/btn_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:gravity="end"
+                android:tag="33"
+                android:text="Sign Up"
+                android:textColor="@color/white"
+                android:textSize="33px" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
