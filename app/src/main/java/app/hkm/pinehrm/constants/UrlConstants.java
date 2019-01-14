@@ -5,11 +5,12 @@ package app.hkm.pinehrm.constants;
  */
 
 public class UrlConstants {
-    public static final String BASE_URL = "http://206.189.209.193:23921";
+    public static final String BASE_URL = "https://www.pinehrm.com/cna/site/";
+    public static final String LOGIN_URL = BASE_URL + "apilogin";
+    public static final String VALIDATE_TOKEN_URL = BASE_URL + "vaidateaccesstocken";
     public static final String REGISTRATION_URL = BASE_URL + "/api/v1/auth/registration/";
     public static final String SELLER_CREATE_URL = BASE_URL + "/api/v1/seller/";
     public static final String URL_GET_USER = BASE_URL + "/api/v1/auth/user/";
-    public static final String LOGIN_URL = BASE_URL + "/api/v1/auth/login/";
     public static final String LOGOUT_URL = BASE_URL + "/api/v1/auth/logout/";
     public static final String BANNER_URL = BASE_URL + "/api/v1/banners/";
     public static final String COUNTRY_URL = BASE_URL + "/api/v1/address/countries/";

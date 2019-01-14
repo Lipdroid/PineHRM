@@ -42,6 +42,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mContext = this;
         findViews();
         initListenersForViews();
+        //for testing
+        et_mail.setText("habibur.rahman@canda.com");
+        et_password.setText("hello");
         mCorrectSize = CorrectSizeUtil.getInstance(this);
         mCorrectSize.correctSize();
     }
@@ -110,9 +113,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void goToMainPage() {
-
         startActivity(new Intent(mContext, MainActivity.class));
         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+        // close this activity
+        finish();
     }
 
 
@@ -135,13 +139,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void requestToLogin() {
-
         final HashMap<String, Object> params = new HashMap<String, Object>();
         params.put(Constants.PARAM_EMAIL, email);
         params.put(Constants.PARAM_PASSWORD, password);
-
-        goToMainPage();
-
         RequestAsyncTask mRequestAsync = new RequestAsyncTask(mContext, Constants.REQUEST_LOGIN, params, new AsyncCallback() {
             @SuppressLint("LongLogTag")
             @Override
@@ -149,7 +149,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Log.e(TAG, result);
                 GlobalUtils.dismissLoadingProgress();
                 if (result != null) {
-
+                    try {
+                        JSONObject jsonObject = new JSONObject(result);
+                        if(jsonObject.has("result")){
+                            String token = jsonObject.getString("result");
+                            //store it in sharedpref
+                            SharedPreferencesUtils.putString(mContext,Constants.PREF_TOKEN,token);
+                            //go to next page
+                            goToMainPage();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     GlobalUtils.showInfoDialog(mContext, "Failed", "Something went wrong please try again", "OK", null);
 
