@@ -128,7 +128,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void afterClickMyhProfileBtn() {
-
+        Intent browserIntent = new Intent(mContext, WebViewActivity.class);
+        browserIntent.putExtra(Constants.TAG_URL, "https://www.pinehrm.com/cna/client/employee/profile/accesstoken/");
+        browserIntent.putExtra(Constants.TAG_TITLE, "Profile");
+        startActivity(browserIntent);
+        overridePendingTransition(R.anim.right_to_left,R.anim.stand_by);
     }
 
     private void afterClickLeftDrawerBtn() {

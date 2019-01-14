@@ -22,6 +22,7 @@ import java.util.HashMap;
 
 import app.hkm.pinehrm.constants.Constants;
 import app.hkm.pinehrm.utils.CorrectSizeUtil;
+import app.hkm.pinehrm.utils.SharedPreferencesUtils;
 
 public class WebViewActivity extends Activity {
     private CorrectSizeUtil mCorrectSize = null;
@@ -31,6 +32,7 @@ public class WebViewActivity extends Activity {
     private ProgressBar mPbLoading = null;
     private String mUrl = null;
     private String title = null;
+    private String token = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,11 @@ public class WebViewActivity extends Activity {
             mUrl = getIntent().getStringExtra(Constants.TAG_URL);
             title = getIntent().getStringExtra(Constants.TAG_TITLE);
             header_title.setText(title);
+            token = SharedPreferencesUtils.getString(mContext, Constants.PREF_TOKEN, null);
+            if (token != null) {
+                mUrl = mUrl + token;
+                Log.e("loadUrl: ",mUrl);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

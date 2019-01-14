@@ -40,14 +40,14 @@ public class DashboardFragment extends Fragment {
         mContext = getActivity();
         gridview = (GridView) root.findViewById(R.id.gridview);
         mListItem = new ArrayList<>();
-        mListItem.add(new ItemObject("Attendance","icon_attendence","http://www.google.com"));
-        mListItem.add(new ItemObject("PaySlip","icon_payslip",""));
-        mListItem.add(new ItemObject("Leave","icon_leave",""));
-        mListItem.add(new ItemObject("Investment Scheme","icon_investment",""));
-        mListItem.add(new ItemObject("Documents","icon_document",""));
-        mListItem.add(new ItemObject("Outpatient","icon_outpatient",""));
-        mListItem.add(new ItemObject("Salary Card","icon_card",""));
-        mListItem.add(new ItemObject("Tax","icon_tax",""));
+        mListItem.add(new ItemObject("Attendance","icon_attendence","https://www.pinehrm.com/cna/client/employee/attendance/accesstoken/"));
+        mListItem.add(new ItemObject("PaySlip","icon_payslip","https://www.pinehrm.com/cna/client/employee/index/accesstoken/"));
+        mListItem.add(new ItemObject("Leave","icon_leave","https://www.pinehrm.com/cna/client/employee/leave/accesstoken/"));
+        mListItem.add(new ItemObject("Investment Scheme","icon_investment","https://www.pinehrm.com/cna/client/employee/invSch/accesstoken/"));
+        mListItem.add(new ItemObject("Documents","icon_document","https://www.pinehrm.com/cna/client/employee/document/accesstoken/"));
+        mListItem.add(new ItemObject("Outpatient","icon_outpatient","https://www.pinehrm.com/cna/client/employee/outPatient/accesstoken/"));
+        mListItem.add(new ItemObject("Salary Card","icon_card","https://www.pinehrm.com/cna/client/employee/salaryCard/accesstoken/"));
+        mListItem.add(new ItemObject("Tax","icon_tax","https://www.pinehrm.com/cna/client/employee/taxslip/accesstoken/"));
 
         populateList(mListItem);
         new MultipleScreen(getActivity());
