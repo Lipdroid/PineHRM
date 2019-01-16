@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private FragmentTransaction fragTransaction = null;
     private FragmentManager mFragManager;
+    private TextView name = null;
+    private TextView email = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setHomeButtonEnabled(true);
         setListenersForViews();
         addFragment(Constants.FRAG_HOME, true);
+        String name_str = SharedPreferencesUtils.getString(mContext, Constants.PREF_USER_NAME, null);
+        String email_str = SharedPreferencesUtils.getString(mContext, Constants.PREF_USER_EMAIL, null);
+
+        name.setText(name_str);
+        email.setText(email_str);
+
         mCorrectSize = CorrectSizeUtil.getInstance(this);
         mCorrectSize.correctSize();
     }
@@ -64,8 +72,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         header_title = (TextView) findViewById(R.id.header_title);
         btn_left_drawer = (ImageView) findViewById(R.id.btn_left_drawer);
         //left drawer items
-        btn_my_profile = (LinearLayout) findViewById(R.id.btn_my_profile);
         btn_logout = (LinearLayout) findViewById(R.id.btn_logout);
+        btn_my_profile = (LinearLayout) findViewById(R.id.btn_my_profile);
+        name = (TextView) findViewById(R.id.tv_username);
+        email = (TextView) findViewById(R.id.tv_email);
+
+
         //main layout
         main_container = (RelativeLayout) findViewById(R.id.main_container);
     }
@@ -123,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void afterClickLogoutBtn() {
         SharedPreferencesUtils.clearPreference(mContext);
-        startActivity(new Intent(mContext,LoginActivity.class));
+        startActivity(new Intent(mContext, LoginActivity.class));
         finish();
     }
 
@@ -132,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         browserIntent.putExtra(Constants.TAG_URL, "https://www.pinehrm.com/cna/client/employee/profile/accesstoken/");
         browserIntent.putExtra(Constants.TAG_TITLE, "Profile");
         startActivity(browserIntent);
-        overridePendingTransition(R.anim.right_to_left,R.anim.stand_by);
+        overridePendingTransition(R.anim.right_to_left, R.anim.stand_by);
     }
 
     private void afterClickLeftDrawerBtn() {

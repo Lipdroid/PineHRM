@@ -77,8 +77,8 @@ public class SplashActivity extends AppCompatActivity {
                 if (result != null) {
                     try {
                         JSONObject jsonObject = new JSONObject(result);
-                        if (jsonObject.has("result")) {
-                            String success = jsonObject.getString("result");
+                        if (jsonObject.has("token_validate")) {
+                            String success = jsonObject.getString("token_validate");
                             if (success.equals("true")) {
                                 goToMainPage();
                             } else {

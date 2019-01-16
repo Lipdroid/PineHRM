@@ -250,15 +250,6 @@ public class JsonParser {
 
             HttpEntity httpEntity = httpResponse.getEntity();
             mJson = EntityUtils.toString(httpEntity, HTTP.UTF_8);
-            //check for the [] braces and create a new jsonObject from the array
-            if (mJson.startsWith("[") && mJson.endsWith("]")) {
-                JSONArray jsonArray = new JSONArray(mJson);
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put(Constants.DATA, jsonArray);
-                mJson = jsonObject.toString();
-            } else {
-                mJson = "{result:" + mJson + "}";
-            }
             Log.e("jsonResponse:", mJson);
             mJObj = new JSONObject(mJson);
         } catch (Exception e) {

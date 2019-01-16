@@ -19,10 +19,11 @@
         android:visibility="gone"
         android:tag="80"/>
     <ImageView
-        android:layout_width="230px"
-        android:layout_height="230px"
+        android:layout_width="300px"
+        android:layout_height="300px"
         android:layout_marginBottom="156px"
         android:visibility="visible"
+        android:rotation="45"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/app_logo" />

@@ -49,7 +49,7 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/roboto"
                     android:tag="46"
-                    android:text="DashBoard"
+                    android:text="Dashboard"
                     android:textColor="@color/white"
                     android:textSize="46px" />
 

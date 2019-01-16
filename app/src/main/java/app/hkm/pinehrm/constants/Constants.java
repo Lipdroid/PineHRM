@@ -15,6 +15,8 @@ public class Constants {
     public static final int REST_GET = 1;
     public static final int REST_PUT = 2;
     public static final int REST_DELETE = 3;
+    public static final String PREF_USER_NAME = "name_prefs";
+    public static final String PREF_USER_EMAIL = "email_prefs";
     public static int REST_PATCH = 4;
 
     //Requests

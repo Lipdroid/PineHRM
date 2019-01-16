@@ -43,8 +43,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViews();
         initListenersForViews();
         //for testing
-        et_mail.setText("habibur.rahman@canda.com");
-        et_password.setText("hello");
+
         mCorrectSize = CorrectSizeUtil.getInstance(this);
         mCorrectSize.correctSize();
     }
@@ -151,8 +150,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (result != null) {
                     try {
                         JSONObject jsonObject = new JSONObject(result);
-                        if(jsonObject.has("result")){
-                            String token = jsonObject.getString("result");
+                        if(jsonObject.has("accesstoken")){
+                            if(jsonObject.has("name")) {
+                                String name = jsonObject.getString("name");
+                                //store it in sharedpref
+                                SharedPreferencesUtils.putString(mContext, Constants.PREF_USER_NAME, name);
+                            }
+                            if(jsonObject.has("email")) {
+                                String email = jsonObject.getString("email");
+                                //store it in sharedpref
+                                SharedPreferencesUtils.putString(mContext, Constants.PREF_USER_EMAIL, email);
+                            }
+                            String token = jsonObject.getString("accesstoken");
                             //store it in sharedpref
                             SharedPreferencesUtils.putString(mContext,Constants.PREF_TOKEN,token);
                             //go to next page

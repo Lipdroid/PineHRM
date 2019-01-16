@@ -11,7 +11,41 @@
         android:id="@+id/user_info"
         android:layout_width="match_parent"
         android:layout_height="180px"
-        android:layout_marginTop="50px">
+        android:layout_marginTop="150px">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="72px"
+            android:layout_marginRight="72px"
+            android:layout_marginTop="-10px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:singleLine="true"
+                android:tag="54"
+                android:text="Md Munir Hossain"
+                android:textColor="@color/white"
+                android:textSize="54px"
+                android:typeface="normal" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="39"
+                android:text="lipuhossain67@gmail.com"
+                android:textColor="@color/white"
+                android:textSize="39px"
+                android:typeface="normal" />
+
+
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -34,6 +68,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="72px"
                 android:scaleType="fitXY"
+                android:src="@drawable/profile_icon"
                 android:visibility="visible"/>
 
             <TextView
@@ -64,7 +99,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="72px"
                 android:scaleType="fitXY"
-                android:visibility="invisible"/>
+                android:src="@drawable/logout_icon"
+                android:visibility="visible"/>
 
             <TextView
                 android:id="@+id/tv_logout"
