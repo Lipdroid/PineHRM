@@ -20,5 +20,5 @@
 
     <color name="gradient_strong">#80AAAAAA</color>
     <color name="gradient_weak">#00555555</color>
-    <color name="darker_gray">#666666</color>
+    <color name="item_bg_red">#A12130</color>
 </resources>
